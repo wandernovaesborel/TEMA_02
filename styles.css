@@ -1,0 +1,186 @@
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+    /* Cores padrão (claro) */
+    --primary-bg: #ffffff;
+    --primary-text: #333333;
+    --primary-accent: #007BFF;
+    --secondary-bg: #f4f4f4;
+    --secondary-text: #555555;
+    --highlight-bg: #ffeaa7;
+    --highlight-border: #fdcb6e;
+    --header-bg: #333333;
+    --header-text: #ffffff;
+    --footer-bg: #333333;
+    --footer-text: #ffffff;
+}
+
+/* ===== TEMA ESCURO (opcional) ===== */
+body.theme-dark {
+    --primary-bg: #222222;
+    --primary-text: #f8f9fa;
+    --secondary-bg: #333333;
+    --header-bg: #111111;
+    --highlight-bg: #555555;
+}
+
+/* ===== ESTILOS GERAIS ===== */
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* === HEADER === */
+.header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+.mobile-menu-btn, .theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* === SEÇÃO DE TEXTO COM DESTAQUE === */
+.text-highlight {
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+}
+
+.highlight {
+    background-color: var(--highlight-bg);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid var(--highlight-border);
+}
+
+/* === DEPOIMENTOS === */
+.testimonials {
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.testimonial {
+    background-color: var(--primary-bg);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* === FAQ === */
+.faq {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background-color: var(--secondary-bg);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+    padding: 1rem;
+    background-color: var(--primary-bg);
+    display: none;
+}
+
+.faq-answer.active {
+    display: block;
+}
+
+/* === TEAM === */
+.team {
+    padding: 2rem;
+    background-color: var(--secondary-bg);
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .columns-container, .cards-container {
+        flex-direction: column;
+    }
+    .hero-banner {
+        height: 50vh; /* aumenta altura em telas menores */
+    }
+}
